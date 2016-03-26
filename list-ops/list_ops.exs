@@ -66,7 +66,8 @@ defmodule ListOps do
   end
 
   @spec concat([[any]]) :: [any]
-  def concat(ll) do
-
+  def concat([]) do [] end
+  def concat([h | t]) do
+    append(h, concat(t))
   end
 end
